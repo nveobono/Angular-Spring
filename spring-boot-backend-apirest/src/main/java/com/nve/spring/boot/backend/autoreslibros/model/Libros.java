@@ -20,7 +20,7 @@ public class Libros implements Serializable {
 
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
-    private Date createAt;
+    private String createAt;
 
 
     private double precio;
@@ -29,8 +29,7 @@ public class Libros implements Serializable {
 
     }
 
-    public Libros(int id, String nombre, String descripcion, Date fechaPublicación, double precio) {
-        this.id = id;
+    public Libros(String nombre, String descripcion, String fechaPublicación, double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.createAt = fechaPublicación;
@@ -61,11 +60,11 @@ public class Libros implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaPublicación() {
+    public String getFechaPublicación() {
         return createAt;
     }
 
-    public void setFechaPublicación(Date fechaPublicación) {
+    public void setFechaPublicación(String fechaPublicación) {
         this.createAt = fechaPublicación;
     }
 

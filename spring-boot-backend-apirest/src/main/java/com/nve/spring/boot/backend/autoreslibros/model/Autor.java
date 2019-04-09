@@ -1,11 +1,12 @@
 package com.nve.spring.boot.backend.autoreslibros.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Entity
 @Table(name="autor_libros")
-public class Autor {
+public class Autor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,14 +20,13 @@ public class Autor {
 
     @Column()
     @ManyToMany
-    private ArrayList<Libros> libros;
+    private Libros libros;
 
     public Autor() {
 
     }
 
-    public Autor(Long id, String nombreAutor, String apellidoAutor, String emailAutor, String telefonoAutor, String foto, ArrayList<Libros> libros) {
-        this.id = id;
+    public Autor(String nombreAutor, String apellidoAutor, String emailAutor, String telefonoAutor, String foto, Libros libros) {
         this.nombreAutor = nombreAutor;
         this.apellidoAutor = apellidoAutor;
         this.emailAutor = emailAutor;
@@ -75,11 +75,11 @@ public class Autor {
         this.telefonoAutor = telefonoAutor;
     }
 
-    public ArrayList<Libros> getLibros() {
+    public Libros getLibros() {
         return libros;
     }
 
-    public void setLibros(ArrayList<Libros> libros) {
+    public void setLibros(Libros libros) {
         this.libros = libros;
     }
 
