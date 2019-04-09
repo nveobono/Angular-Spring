@@ -1,0 +1,2 @@
+# someAngularSimpleProject
+Angular Simple Project
