@@ -4,6 +4,8 @@ import { Cliente } from './cliente';
 
 import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -11,9 +13,17 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-  constructor() { }
+  private urlEndPoint: string = 'http://localhost:8080/api/clientes';
 
-  getClientes(): Observable<Cliente[]>{
+  constructor(private http: HttpClient) { }
+
+  /*getClientesAngular(): Observable<Cliente[]>{
     return of(CLIENTES);
+  }*/
+
+  getCliente(): Observable<Cliente[]>{
+    return this.http.get(this.urlEndPoint).pipe(
+      map((response: any) => response as Cliente[])
+    );
   }
 }
