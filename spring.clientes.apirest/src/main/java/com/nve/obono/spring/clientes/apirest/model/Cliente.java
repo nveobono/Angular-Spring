@@ -20,6 +20,17 @@ public class Cliente implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date createAt;
 
+    public Cliente(){
+
+    }
+
+    public Cliente(String nombre, String apellidos, String email, Date date){
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.createAt = date;
+    }
+
     public Long getId() {
         return id;
     }
