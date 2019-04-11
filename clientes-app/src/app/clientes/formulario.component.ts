@@ -37,4 +37,12 @@ export class FormularioComponent implements OnInit {
     console.log("clicked");
     console.log(this.cliente);
   }
+
+  public update(): void{
+    this.clienteService.update(this.cliente).subscribe( 
+      (cliente: any) => {
+        this.router.navigate(['/clientes'])
+        swal.fire('Cliente Actaulizado', `Clinete ${cliente.nombre} actualidado con exito`, 'success')
+      })
+  }
 }
