@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from './cliente';
 
-import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 
 @Injectable({

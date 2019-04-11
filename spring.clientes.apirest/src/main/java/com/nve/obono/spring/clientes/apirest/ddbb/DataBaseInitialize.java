@@ -36,43 +36,43 @@ public class DataBaseInitialize {
         Cliente c3 = new Cliente("Juam", "Manuel", "j.ma@alumnos.urjc.es", date);
         repositoryCliente.save(c3);
 
-        Cliente c4 = new Cliente("Jesus", "Avila", "lv.ar@gmail.com", date);
+        Cliente c4 = new Cliente("Jesus", "Avila", "j.av@gmail.com", date);
         repositoryCliente.save(c4);
 
-        Cliente c5 = new Cliente("Miguel", "Torrijos", "eb.nve@alumnos.urjc.es", date);
+        Cliente c5 = new Cliente("Miguel", "Torrijos", "m.tor@alumnos.urjc.es", date);
         repositoryCliente.save(c5);
 
-        Cliente c6 = new Cliente("Bryan", "Vicente", "lv.ar@gmail.com", date);
+        Cliente c6 = new Cliente("Bryan", "Vicente", "b.vin@gmail.com", date);
         repositoryCliente.save(c6);
 
-        Cliente c7 = new Cliente("Vicente", "Nve", "eb.nve@alumnos.urjc.es", date);
+        Cliente c7 = new Cliente("Vicente", "Nve", "va.nve@alumnos.urjc.es", date);
         repositoryCliente.save(c7);
 
-        Cliente c8 = new Cliente("Betty", "Nve", "lv.ar@gmail.com", date);
+        Cliente c8 = new Cliente("Betty", "Nve", "b.obono@gmail.com", date);
         repositoryCliente.save(c8);
 
-        Cliente c9 = new Cliente("Pedro", "Luis", "eb.nve@alumnos.urjc.es", date);
+        Cliente c9 = new Cliente("Pedro", "Luis", "p.luis@alumnos.urjc.es", date);
         repositoryCliente.save(c9);
 
-        Cliente c10 = new Cliente("Luis", "Sanchez", "lv.ar@gmail.com", date);
+        Cliente c10 = new Cliente("Luis", "Sanchez", "l.sanchez@gmail.com", date);
         repositoryCliente.save(c10);
 
-        Cliente c11 = new Cliente("Carlos", "Nve", "eb.nve@alumnos.urjc.es", date);
+        Cliente c11 = new Cliente("Carlos", "Vacaz", "ca.vacaz@alumnos.urjc.es", date);
         repositoryCliente.save(c11);
 
-        Cliente c12 = new Cliente("Jorge", "Gameiro", "lv.ar@gmail.com", date);
+        Cliente c12 = new Cliente("Jorge", "Gameiro", "jor.gar@gmail.com", date);
         repositoryCliente.save(c12);
 
-        Cliente c13 = new Cliente("Ana", "Mba", "eb.nve@alumnos.urjc.es", date);
+        Cliente c13 = new Cliente("Ana", "Mba", "ana.mba@alumnos.urjc.es", date);
         repositoryCliente.save(c13);
 
-        Cliente c14 = new Cliente("Kiela", "Nsue", "lv.ar@gmail.com", date);
+        Cliente c14 = new Cliente("Kiela", "Nsue", "keila.nsue@gmail.com", date);
         repositoryCliente.save(c14);
 
-        Cliente c15 = new Cliente("Chelina", "Edu", "eb.nve@alumnos.urjc.es", date);
+        Cliente c15 = new Cliente("Chelina", "Edu", "chelina.edu@alumnos.urjc.es", date);
         repositoryCliente.save(c15);
 
-        Cliente c16 = new Cliente("Antonio", "Maria", "lv.ar@gmail.com", date);
+        Cliente c16 = new Cliente("Antonio", "Maria", "antonio.maria@gmail.com", date);
         repositoryCliente.save(c16);
 
     }
