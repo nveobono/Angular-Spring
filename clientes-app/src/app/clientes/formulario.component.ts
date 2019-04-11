@@ -20,7 +20,7 @@ export class FormularioComponent implements OnInit {
   }
 
   public cargarCliente(): void{
-    this.activatedRoute.params.subscribe((params: any) =>{
+    this.activatedRoute.params.subscribe((params: any) => {
       let id = params['id']
       if(id){
         this.clienteService.getCliente(id).subscribe( (cliente) => this.cliente = cliente)
