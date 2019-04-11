@@ -13,7 +13,7 @@ public class Cliente implements Serializable {
     private Long id;
 
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String email;
 
     @Column(name = "create_at")
@@ -24,9 +24,9 @@ public class Cliente implements Serializable {
 
     }
 
-    public Cliente(String nombre, String apellidos, String email, Date date){
+    public Cliente(String nombre, String apellido, String email, Date date){
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.email = email;
         this.createAt = date;
     }
@@ -52,12 +52,12 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getEmail() {

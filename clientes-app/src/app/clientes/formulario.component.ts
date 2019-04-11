@@ -18,7 +18,7 @@ export class FormularioComponent implements OnInit {
   }
 
   public create(): void{
-    this.clienteService.createCliente(this.cliente).subscribe(
+    this.clienteService.create(this.cliente).subscribe(
       response => this.router.navigate(['/clientes'])
     )
     console.log("clicked");

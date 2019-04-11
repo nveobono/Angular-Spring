@@ -14,3 +14,16 @@ export const CLIENTES: Cliente[]= [
     {id: 11, nombre:'Enresto Baltasar', apellido:'Nve Obono', createAt:'09/03/2019', email:'nveobono1@gmail.com'},
     {id: 12, nombre:'Enresto Baltasar', apellido:'Nve Obono', createAt:'09/03/2019', email:'nveobono1@gmail.com'},
   ];
+
+    /*
+    serviceCliente
+    getClientesAngular(): Observable<Cliente[]>{
+    return of(CLIENTES);
+  }*/
+
+  /*
+      clienteComponent
+      this.clienteService.getClientesAngular().subscribe(
+      (clientes:any) => {
+        this.clientes = clientes
+      });*/

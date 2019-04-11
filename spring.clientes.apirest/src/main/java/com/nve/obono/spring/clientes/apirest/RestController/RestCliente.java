@@ -40,7 +40,7 @@ public class RestCliente {
         Cliente clienteActual = serviceCliente.findById(id);
 
         clienteActual.setNombre(cliente.getNombre());
-        clienteActual.setApellidos(cliente.getApellidos());
+        clienteActual.setApellido(cliente.getApellido());
         clienteActual.setEmail(cliente.getEmail());
 
         return serviceCliente.addCliente(clienteActual);
