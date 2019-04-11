@@ -13,7 +13,7 @@ export class ClientesComponent implements OnInit {
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit() {
-    this.clienteService.getCliente().subscribe(
+    this.clienteService.getClientes().subscribe(
       (clientes:any) => {
         this.clientes = clientes
       });    
