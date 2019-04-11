@@ -23,7 +23,7 @@ export class FormularioComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: any) => {
       let id = params['id']
       if(id){
-        this.clienteService.getCliente(id).subscribe( (cliente) => this.cliente = cliente)
+        this.clienteService.getCliente(id).subscribe( (cliente: any) => this.cliente = cliente)
       }
     })
   }

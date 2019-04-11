@@ -9,7 +9,7 @@ public interface ServiceImplement {
 
     public Cliente addCliente(Cliente cliente);
 
-    public void deleteCliente(Long id);
+    public void deleteCliente(Cliente cliente);
 
     public Cliente findById(Long id);
 }
