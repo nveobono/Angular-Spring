@@ -6,11 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -47,9 +52,24 @@ public class RestCliente {
 
     @PostMapping("/clientes")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> crear(@RequestBody Cliente cliente){
+    public ResponseEntity<?> crear(@Valid @RequestBody Cliente cliente, BindingResult result){
         Cliente clienteNuevo = null;
         Map<String, Object> response = new HashMap<>();
+
+        if(result.hasErrors()){
+            /*List<String> errors = new ArrayList<>();
+
+            for(FieldError err: result.getFieldErrors()){
+                errors.add("El campo '" + err.getField()+ "' " + err.getDefaultMessage());
+            }*/
+
+            List<String> errors = result.getFieldErrors().stream().map(err ->
+            "El campo '" + err.getField()+ "' " + err.getDefaultMessage()).collect(Collectors.toList());
+
+            response.put("error", errors);
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+        }
+
         try {
             clienteNuevo = serviceCliente.addCliente(cliente);
         }catch (DataAccessException e){
@@ -63,11 +83,15 @@ public class RestCliente {
     }
 
     @PutMapping("/clientes/{id}")
-    public ResponseEntity<?> modificar(@PathVariable Long id, @RequestBody Cliente cliente ){
+    public ResponseEntity<?> modificar(@Valid @PathVariable Long id, @RequestBody Cliente cliente, BindingResult result){
         Cliente clienteActual = serviceCliente.findById(id);
         Cliente clienteUpdated = null;
         Map<String, Object> response= new HashMap<>();
 
+        if(result.hasErrors()){
+            List<String> errors = result.getFieldErrors().stream().map(err -> "El campo '" + err.getField() + "' " + err.getDefaultMessage())
+                    .collect(Collectors.toList());
+        }
         if(cliente == null){
             response.put("mensaje", "Error, no se puede editar: El cliente con ID: ".concat(id.toString().concat(" no existe ;)")));
             return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
