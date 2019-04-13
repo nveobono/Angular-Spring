@@ -27,6 +27,7 @@ export class ClienteService {
 
   create(cliente: Cliente): Observable<Cliente>{
     return this.http.post<Cliente>(this.urlEndPoint, cliente, {headers: this.httpHeaders}).pipe(
+      map((response: any) => response.cliente as Cliente),
         catchError((e: any) =>{
           console.error(e.error.mensaje);
           Swal.fire(e.error.mensaje, e.error.error,'error');
@@ -48,6 +49,7 @@ export class ClienteService {
 
   update(cliente: Cliente): Observable<Cliente>{
     return this.http.put<Cliente>(`${this.urlEndPoint}/${cliente.id}`, cliente, {headers: this.httpHeaders}).pipe(
+      map((response: any) => response.cliente as Cliente),
       catchError((e: any) =>{
         console.error(e.error.mensaje);
         Swal.fire(e.error.mensaje, e.error.error, 'error');

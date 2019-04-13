@@ -32,7 +32,7 @@ export class FormularioComponent implements OnInit {
     this.clienteService.create(this.cliente).subscribe(
       cliente => {
         this.router.navigate(['/clientes'])
-        swal.fire('Nuevo Cliente', `Cliente ${cliente.nombre} creado con exito`, 'success')
+        swal.fire('Nuevo Cliente', `Cliente ${cliente.nombre} ha sido creado con exito`, 'success')
       });
     console.log("clicked");
     console.log(this.cliente);
@@ -42,7 +42,7 @@ export class FormularioComponent implements OnInit {
     this.clienteService.update(this.cliente).subscribe( 
       (cliente: any) => {
         this.router.navigate(['/clientes'])
-        swal.fire('Cliente Actaulizado', `Clinete ${cliente.nombre} actualidado con exito`, 'success')
+        swal.fire('Cliente Actaulizado', `Clinete ${cliente.nombre} ha sido actualidado con exito`, 'success')
       })
   }
 }
