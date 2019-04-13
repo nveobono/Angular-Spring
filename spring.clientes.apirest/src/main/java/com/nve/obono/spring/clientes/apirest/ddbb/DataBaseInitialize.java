@@ -33,7 +33,7 @@ public class DataBaseInitialize {
         Cliente c2 = new Cliente("Leslie", "Vicente", "lv.ar@gmail.com", date);
         repositoryCliente.save(c2);
 
-        Cliente c3 = new Cliente("Juam", "Manuel", "j.ma@alumnos.urjc.es", date);
+        Cliente c3 = new Cliente("Juan", "Manuel", "j.ma@alumnos.urjc.es", date);
         repositoryCliente.save(c3);
 
         Cliente c4 = new Cliente("Jesus", "Avila", "j.av@gmail.com", date);
