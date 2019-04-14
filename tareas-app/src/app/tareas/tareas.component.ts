@@ -18,5 +18,20 @@ export class TareasComponent implements OnInit {
     );
   }
   
+  getTarea(){
+    
+  }
+
+  create(){
+
+  }
+
+  update(){
+
+  }
+
+  delete(){
+
+  }
 
 }
