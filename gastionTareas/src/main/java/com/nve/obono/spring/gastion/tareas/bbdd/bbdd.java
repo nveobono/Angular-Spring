@@ -24,10 +24,10 @@ public class bbdd {
         Tareas t3 = new Tareas("Ir a clase", "Ateder las clases de hoy de DAW y Seguridad informatica", true);
         repositoryTareas.save(t3);
 
-        Tareas t4 = new Tareas("Llamar hermanos", "", true);
+        Tareas t4 = new Tareas("Llamar hermanos", "Tener que llamar a los hermanos de la iglesia", true);
         repositoryTareas.save(t4);
 
-        Tareas t5 = new Tareas("Leer libro", "", false);
+        Tareas t5 = new Tareas("Leer libro", "Continuar leyendo libro", false);
         repositoryTareas.save(t5);
 
         Tareas t6 = new Tareas("Atender Culto", "", true);
